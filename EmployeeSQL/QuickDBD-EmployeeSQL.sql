@@ -1,7 +1,8 @@
-﻿-- Exported from QuickDBD: https://www.quickdatabasediagrams.com/
+-- Exported from QuickDBD: https://www.quickdatabasediagrams.com/
 -- Link to schema: https://app.quickdatabasediagrams.com/#/d/06aL97
--- NOTE! If you have used non-SQL datatypes in your design, you will have to change these here.
 
+--09 SQL Homework - Terrence Cummings
+--CREATING TABLES FOR EMPLOYEES SQL
 
 CREATE TABLE "titles" (
     "title_id" varchar(50)   NOT NULL,
@@ -14,11 +15,11 @@ CREATE TABLE "titles" (
 CREATE TABLE "employees" (
     "emp_no" varchar(50)   NOT NULL,
     "emp_title_id" varchar(50)   NOT NULL,
-    "birth_date" MDY   NOT NULL,
+    "birth_date" varchar(50)   NOT NULL,
     "first_name" varchar(50)   NOT NULL,
     "last_name" varchar(50)   NOT NULL,
     "sex" varchar(1)   NOT NULL,
-    "hire_date" MDY   NOT NULL,
+    "hire_date" varchar(50)   NOT NULL,
     CONSTRAINT "pk_employees" PRIMARY KEY (
         "emp_no"
      )
@@ -50,10 +51,7 @@ CREATE TABLE "dept_manager" (
 
 CREATE TABLE "dept_emp" (
     "emp_no" varchar(50)   NOT NULL,
-    "dept_no" varchar(50)   NOT NULL,
-    CONSTRAINT "pk_dept_emp" PRIMARY KEY (
-        "emp_no"
-     )
+    "dept_no" varchar(50)   NOT NULL
 );
 
 ALTER TABLE "employees" ADD CONSTRAINT "fk_employees_emp_title_id" FOREIGN KEY("emp_title_id")
