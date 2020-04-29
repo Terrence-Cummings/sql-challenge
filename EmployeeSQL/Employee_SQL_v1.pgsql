@@ -1,14 +1,6 @@
 --SQL CHALLENGE
 --EMPLOYEE_SQL
 
-DROP TABLE titles;
-DROP TABLE employees;
-DROP TABLE salaries;
-DROP TABLE departments;
-DROP TABLE dept_manager;
-DROP TABLE dept_emp;
-
-
 CREATE TABLE "titles" (
     "title_id" varchar(50)   NOT NULL,
     "title" varchar(50)   NOT NULL,
@@ -79,4 +71,5 @@ REFERENCES "employees" ("emp_no");
 
 ALTER TABLE "dept_emp" ADD CONSTRAINT "fk_dept_emp_dept_no" FOREIGN KEY("dept_no")
 REFERENCES "departments" ("dept_no");
+
 
